@@ -2,7 +2,7 @@
 
 Banshy is a web extension that downloads and analyzes files in cloud, before downloading them to your computer.
 
-![image](./Project%20Management/Weekly%20Reports/images/banshy_extension.gif)
+![image](./Images/banshy_extension.gif)
 
 When you click on a download, the extension blocks the download,then the backend downloads and analyzes the file, and returns the result to the front to releases the download or not.
 
