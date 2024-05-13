@@ -48,6 +48,10 @@ The backend can also be launched with Kubernetes.
 - 1 - Go on `Kubernetes_Backend` folder
 - 2 - Read `README.md`
 
+# 🏗️ Architecture
+
+![image](./Images/Deployment%20Diagram.png)
+
 # 🚧 Improvements
 
 **This is an open source project, feel free to [contribute or suggest any ideas](https://github.com/Kali-ki/Banshy/issues).**
