@@ -50,22 +50,4 @@ The backend can also be launched with Kubernetes.
 
 # 🚧 Improvements
 
-**This is an open source project, feel free to contribute or suggest any ideas.**
-
-Here is the list of all improvements that are planed :
-
-- Create analyzers for : 
-
-    - 1 - Office documents (.docx, .xlsx, .pptx, ...)
-    - 2 - Compresed files (.zip, .rar, .7z)
-    - 3 - HTML and JS (.html, .js)
-    - 4 - DLL (.dll)
-    - 5 - Installation files (.msi, .msix, ...)
-    - 6 - Image files (.img, .iso)
-
-- Find more PDF files. The current model for PDF prediction has been trained on a dataset of 800 PDFs.
-But, it is too limited to say that the model can be applied to any PDF.
-
-- Add Banshy extension to web store
-
-- Host backend in a server
+**This is an open source project, feel free to [contribute or suggest any ideas](https://github.com/Kali-ki/Banshy/issues).**
