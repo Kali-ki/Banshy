@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banshy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+          text-align: center;
+          min-width: 300px;
+          min-height: 200px;
+          max-width: 800px;
+          max-height: 400px;
+        }
+        
+      </style>
+      <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>Banshy</h1>
+        <label id="switch" class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div>
+        <i id="loadingIcon" class="fas fa-spinner fa-spin spinner"></i>
+    </div>
+    <div id="recentDownloadsList">
+        <ul>
+        </ul>
+    </div>
+    <div id="downloadsHiddenList" style="display: none;">
+        <ul></ul>
+    </div>
+    <div class="fleches-container">
+        <span class="fleche"></span>
+        <span class="fleche"></span>
+    </div>
+</body>
+</html>

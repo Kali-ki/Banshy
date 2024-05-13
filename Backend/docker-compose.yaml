@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+
+  # MySQL Database
+  mysql-db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-uroot", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 2s
+      timeout: 20s
+      retries: 10
+    volumes:
+       - ./MySQL_Volume:/var/lib/mysql
+
+  # Banshy Backend
+  banshy:
+    build: .
+    container_name: banshy_backend
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+    restart: always
+
+  # Nginx
+  # Watch ./Nginx/Dockerfile
+  nginx:
+    build: ./Nginx
+    container_name: banshy_nginx
+    depends_on:
+      - banshy
+      - mysql-db
+    ports:
+      - 5000:5000

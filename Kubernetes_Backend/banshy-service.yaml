@@ -1,0 +1,13 @@
+# Service for Banshy Backend
+
+apiVersion: v1
+kind: Service # Kind of resource to be created, in this case, a service
+metadata:
+  name: banshy
+spec:
+  selector:
+    app: banshy-container # Tag that will be used to identify the deployment in the service
+  ports:
+    - protocol: TCP
+      port: 5000 # Port that the service will listen to
+      targetPort: 5000 # Port that the service will redirect the traffic to

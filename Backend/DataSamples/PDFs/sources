@@ -1,0 +1,7 @@
+Safe PDFs :
+https://github.com/tpn/pdfs
+https://www.loc.gov/item/2020445568/
+sudo find ~/Documents -type f -name "*.pdf" -exec cp {} ~/Desktop/pdf \;
+
+Infected :
+https://github.com/luigigubello/PayloadsAllThePDFs

@@ -1,0 +1,6 @@
+docker-compose.yaml
+DataSamples/
+MySQL_Volume/
+**/__pycache__/
+**/.git
+**/.gitignore

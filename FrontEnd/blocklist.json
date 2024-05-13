@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "priority": 1,
+      "action": {
+        "type": "modifyHeaders",
+        "requestHeaders": [
+          { "header": "Content-Type", "operation": "set", "value": "application/json" },
+          { "header": "X-HTTP-Method-Override", "operation": "append", "value": "POST" }
+        ],
+        "removeHeaders": ["Content-Length"],
+        "extraHeaders": [
+          { "header": "X-Original-Method", "value": "GET" }
+        ]
+      },
+      "condition": { "urlFilter": "example.com", "resourceTypes": ["main_frame"] }
+    }
+]

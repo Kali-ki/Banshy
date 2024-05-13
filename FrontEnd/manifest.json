@@ -1,0 +1,35 @@
+{
+    "name": "Banshy",
+    "version": "1.0.0",
+    "description": "Ceci est une application permettant de securiser vos telechargements",
+    "manifest_version" : 3,
+    "author" : "L'equipe de cyber",
+        "action":{
+        "default_popup" : "index.html",
+        "default_title" : "Banshy",
+        "default_icon": {
+          "14": "images/icon14.png",
+          "48": "images/icon48.png",
+          "128": "images/icon128.png"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "downloads",
+        "storage",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "webRequest"
+        ],
+      "background": {
+        "service_worker": "background.js"
+      },
+      "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"],
+          "run_at": "document_end"
+        }
+      ]
+}

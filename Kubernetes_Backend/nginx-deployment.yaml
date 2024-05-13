@@ -1,0 +1,29 @@
+# Deployment for Nginx
+
+apiVersion: apps/v1
+kind: Deployment # Kind of resource to be created, in this case, a deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3 # Number of replicas to be created
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    type: RollingUpdate # Rolling update strategy
+    rollingUpdate:
+      maxUnavailable: 1 # Number of pods that can be unavailable during the update
+      maxSurge: 1 # Number of pods that can be created above the desired number of pods
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - image: kiki2956/banshy-nginx # Image to be used in the container. The image is hosted my Docker Hub.
+          name: banshy-nginx
+          ports:
+            - containerPort: 5000 # Port that the container will listen to
+      restartPolicy: Always

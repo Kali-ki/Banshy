@@ -1,0 +1,18 @@
+# Deployment for Nginx
+
+apiVersion: v1
+kind: Service # Kind of resource to be created, in this case, a service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx # Tag that will be used to identify the deployment in the service
+spec:
+  selector:
+    app: nginx
+  type: LoadBalancer # Type of service, in this case, a load balancer. This will expose the service for external access
+  ports:
+    - protocol: TCP
+      port: 5000 # Port that the service will listen to
+      targetPort: 5000 # Port that the service will redirect the traffic to
+      nodePort: 30000 # Port for the service to be accessed from outside the cluster
+      

@@ -1,0 +1,13 @@
+# Service for MySQL Database
+
+apiVersion: v1
+kind: Service # Kind of resource to be created, in this case, a service
+metadata:
+  name: mysql-db
+spec:
+  selector:
+    app: mysql-db-container
+  ports:
+    - protocol: TCP
+      port: 3306 # Port that the service will listen to
+      targetPort: 3306 # Port that the service will redirect the traffic to

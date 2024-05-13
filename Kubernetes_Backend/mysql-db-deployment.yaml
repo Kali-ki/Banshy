@@ -1,0 +1,37 @@
+# Deployment for MySQL Database
+
+apiVersion: apps/v1
+kind: Deployment # Kind of resource to be created, in this case, a deployment
+metadata:
+  name: mysql-db-deployment # Name of the deployment, appears on the result of : kubectl get deployments
+  labels:
+    app: mysql-db-container # Tag that will be used to identify the deployment in the service
+spec:
+  replicas: 1 # Only one replica because it is a database, and the data should be consistent
+  selector:
+    matchLabels:
+      app: mysql-db-container
+  template:
+    metadata:
+      labels:
+        app: mysql-db-container
+    spec:
+      containers:
+        - name: mysql-db-container
+          image: mysql:8 # Image to be used in the container. This is the official MySQL image
+          ports:
+            - containerPort: 3306 # Port that the container will listen to
+          env: # Environment variables to be passed to the container
+            - name: MYSQL_DATABASE
+              value: banshy_db
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef: # Secret to store the root password
+                  name: mysql-db-secret
+                  key: mysql-root-password
+            - name: MYSQL_USER
+              value: user
+            - name: MYSQL_PASSWORD
+              value: password
+      restartPolicy: Always
+      

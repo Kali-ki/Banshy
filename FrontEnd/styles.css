@@ -1,0 +1,261 @@
+/* FILEPATH: /c:/Balus/UQAC/Atelier Cyber II/BanshyExt/styles.css */
+
+@font-face {
+  font-family: 'Abang';
+  src: url('fonts/Abang.otf') format('opentype');
+  /* Ajoute d'autres formats de police si nécessaire */
+}
+
+
+/* Reset default styles */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: Abang, sans-serif;
+}
+
+/* Set background color and font styles */
+body {
+  background-color: #0d1061;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* Center the content */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style the heading */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ddcfcf;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+/* Style the paragraph */
+p {
+  font-size: 16px;
+  color: #fffdfd;
+  margin-bottom: 8px;
+}
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+
+/* Style pour la liste */
+#recentDownloadsList ul {
+  list-style-type: none; /* Pour supprimer les puces de la liste */
+  padding: 0; /* Pour supprimer le padding par défaut de la liste */
+  margin-bottom: 0;
+}
+
+/* Style pour les éléments de la liste */
+#recentDownloadsList ul li .file-status {
+  background-color: #f2f2f2; /* Couleur de fond */
+  padding: 15px; /* Espacement interne */
+  margin-bottom: 5px; /* Marge en bas pour séparer les éléments */
+  border-radius: 5px; /* Coins arrondis */
+}
+
+/* Style pour les éléments de la liste au survol */
+#recentDownloadsList ul li .file-status:hover {
+  background-color: #e0e0e0; /* Couleur de fond au survol */
+  cursor: pointer; /* Curseur de la souris change au survol */
+}
+
+/* Style pour la liste */
+#downloadsHiddenList ul {
+  list-style-type: none; /* Pour supprimer les puces de la liste */
+  padding: 0; /* Pour supprimer le padding par défaut de la liste */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Style pour les éléments de la liste */
+#downloadsHiddenList ul li .file-status {
+  background-color: #f2f2f2; /* Couleur de fond */
+  padding: 15px; /* Espacement interne */
+  margin-bottom: 5px; /* Marge en bas pour séparer les éléments */
+  border-radius: 5px; /* Coins arrondis */
+}
+
+/* Style pour les éléments de la liste au survol */
+#downloadsHiddenList ul li .file-status:hover {
+  background-color: #e0e0e0; /* Couleur de fond au survol */
+  cursor: pointer; /* Curseur de la souris change au survol */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  border-radius: 1px; /* Arrondir les bords */
+  margin-bottom: 20px;
+  /*overflow: hidden;*/
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 100px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+ 
+  border-radius: 100px;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  transition: transform 0.4s;
+}
+
+input:not(:checked) + .slider:before {
+  transition: none; /* Ne pas appliquer de transition lors du chargement initial */
+}
+
+.active .slider {
+  background-color: #2196F3; /* Couleur de fond du slider lorsqu'il est activé */
+}
+
+.active .slider:before {
+  transform: translateX(26px); /* Déplacement du bouton ou marqueur vers la droite lorsqu'il est activé*/
+  /* left: 30px; */
+}
+
+.file-status {
+  display: inline-block;
+  padding: 4px 8px; /* Ajuste le padding selon ton design */
+  border: 5px solid transparent; /* Contour initial transparent */
+}
+
+.safe {
+  border-color: green;
+}
+
+.unsafe {
+  border-color: red;
+}
+
+.none {
+  border-color: #f2f2f2;
+}
+
+#toggleButton {
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#toggleButton:hover {
+  background-color: #2980b9;
+}
+
+#toggleButton.active {
+  transform: rotate(180deg);
+}
+
+
+
+.fleche {
+  display: inline-block; /* Assure-toi que les spans sont en ligne */
+  width: 5px;
+  height: 20px;
+  background: white;
+  border-radius: 3px;
+  margin: 6px auto; /* Centre les spans verticalement dans la div */
+}
+
+.fleche:nth-of-type(1) {
+  transform: rotate(-45deg);
+  margin-right: 2px;
+}
+
+.fleche:nth-of-type(2) {
+  transform: rotate(45deg);
+  margin-left: 2px;
+}
+
+.fleche.inverse:nth-of-type(1) {
+  transform: rotate(45deg); /* Rotation inversée pour le premier span */
+}
+
+.fleche.inverse:nth-of-type(2) {
+  transform: rotate(-45deg); /* Rotation inversée pour le deuxième span */
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Largeur de la barre de défilement */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Couleur de fond de la barre de défilement */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Couleur de la poignée */
+}
+
+/* Spinner animation */
+.spinner {
+  animation: spin 1s linear infinite;
+  color:#e0e0e0
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
